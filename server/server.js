@@ -5,7 +5,7 @@ const website = require('../website/index.html');
 var app = express();
 
 app.get('/', (req, res) => {
-  res.send(website)
+  res.send('hello')
   })
 });
 
