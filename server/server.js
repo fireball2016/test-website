@@ -1,13 +1,13 @@
 const express = require('express');
 const port = process.env.PORT || 3000;
-const website = require('../website/index.html');
 
 var app = express();
 
-app.get('/', (req, res) => {
-  res.send('hello')
-  })
-});
+app.use('/static', express.static('website'));
+app.get('/static', (req, res) => {
+  res.sendFile('index.html')
+})
+
 
 app.listen(port, () => {
   console.log(`Server is up on port ${port}`);
